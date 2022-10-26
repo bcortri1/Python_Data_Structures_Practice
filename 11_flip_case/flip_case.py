@@ -11,3 +11,9 @@ def flip_case(phrase, to_swap):
         'AaaaHHH'
 
     """
+    for index in range(len(phrase)):
+        if phrase[index] == to_swap.upper():
+            phrase = phrase[:index] + phrase[index].lower() + phrase[index+1:]
+        elif phrase[index] == to_swap.lower():
+            phrase = phrase[:index] + phrase[index].upper() + phrase[index+1:]
+    return phrase
