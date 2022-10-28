@@ -16,3 +16,6 @@ def friend_date(a, b):
         >>> friend_date(sauron, gandalf)
         True
     """
+
+    compare = set(a[-1]).union(set(b[-1]))
+    return not len(a[-1] + b[-1]) == len(compare)
