@@ -1,4 +1,4 @@
-def includes(collection, sought, start=None):
+def includes(collection, sought, start=0):
     """Is sought in collection, starting at index start?
 
     Return True/False if sought is in the given collection:
@@ -24,9 +24,15 @@ def includes(collection, sought, start=None):
         >>> includes({1, 2, 3}, 1)
         True
 
-        >>> includes({1, 2, 3}, 1, 3)  # "start" ignored for sets!
+        >>> includes({1, 2, 3}, 3, 1)  # "start" ignored for sets!
         True
+
+        >>> includes({1, 2, 3}, 1, 3)  # "start" ignored for sets!
+        False
 
         >>> includes({"apple": "red", "berry": "blue"}, "blue")
         True
     """
+    
+    collection = list(collection)
+    return sought in collection[start:]
