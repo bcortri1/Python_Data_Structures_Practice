@@ -13,3 +13,4 @@ def find_the_duplicate(nums):
         >>> find_the_duplicate([2, 1, 3, 4]) is None
         True
     """
+    return next((num for num in nums if nums.count(num) > 1), None)
